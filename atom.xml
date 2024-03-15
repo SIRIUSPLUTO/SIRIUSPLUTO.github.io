@@ -6,7 +6,7 @@
   <link href="https://siriuspluto.github.io/atom.xml" rel="self"/>
   
   <link href="https://siriuspluto.github.io/"/>
-  <updated>2024-03-13T05:28:53.931Z</updated>
+  <updated>2024-03-15T02:27:32.401Z</updated>
   <id>https://siriuspluto.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://siriuspluto.github.io/posts/general.html"/>
     <id>https://siriuspluto.github.io/posts/general.html</id>
     <published>2024-03-08T05:50:00.000Z</published>
-    <updated>2024-03-13T05:28:53.931Z</updated>
+    <updated>2024-03-15T02:27:32.401Z</updated>
     
     <content type="html"><![CDATA[<div class="note info flat"><p>参考：<a href="https://www.bilibili.com/video/BV15b4y1a7yG/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&amp;vd_source=beccc1aa43a80247195ca2b7ae6999b7">黑马程序员SpringBoot2全套视频教程，springboot零基础到项目实战（spring boot2完整版）_哔哩哔哩_bilibili</a></p></div><h1>1. 基础篇</h1><ul><li>能够创建SpringBoot工程</li><li>基于SpringBoot实现SSM整合</li></ul><h1>2. 开发实用篇</h1><ul><li>能够基于SpringBoot整合任意第三方技术</li></ul><h1>3. 原理篇</h1><ul><li>掌握SpringBoot内部工作流程</li><li>理解SpringBoot整合第三方技术的原理</li><li>实现自定义开发整合第三方技术的组件</li></ul><h1>4. 运维实用篇</h1><ul><li>能够掌握SpringBoot程序多环境开发</li><li>能够基于Linux系统发布SpringBoot工程</li><li>能够解决线上灵活配置SpringBoot工程的需求</li></ul>]]></content>
     
@@ -30,9 +30,7 @@
     
     
     
-    <category term="后端" scheme="https://siriuspluto.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    <category term="Java快速开发框架" scheme="https://siriuspluto.github.io/categories/%E5%90%8E%E7%AB%AF/Java%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
+    <category term="Java快速开发框架" scheme="https://siriuspluto.github.io/categories/Java%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"/>
     
     
     <category term="Java" scheme="https://siriuspluto.github.io/tags/Java/"/>

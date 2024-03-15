@@ -4,7 +4,7 @@
   <url>
     <loc>https://siriuspluto.github.io/posts/general.html</loc>
     
-    <lastmod>2024-03-13</lastmod>
+    <lastmod>2024-03-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -74,15 +74,6 @@
   </url>
   
   <url>
-    <loc>https://siriuspluto.github.io/box/gallery/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://siriuspluto.github.io/box/nav/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -92,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://siriuspluto.github.io/life/movies/index.html</loc>
+    <loc>https://siriuspluto.github.io/box/gallery/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -110,7 +101,25 @@
   </url>
   
   <url>
+    <loc>https://siriuspluto.github.io/personal/about/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://siriuspluto.github.io/site/census/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://siriuspluto.github.io/life/movies/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -129,15 +138,6 @@
   
   <url>
     <loc>https://siriuspluto.github.io/social/link/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://siriuspluto.github.io/personal/about/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -217,14 +217,7 @@
   </url>
   
   <url>
-    <loc>https://siriuspluto.github.io/categories/%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://siriuspluto.github.io/categories/%E5%90%8E%E7%AB%AF/Java%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</loc>
+    <loc>https://siriuspluto.github.io/categories/Java%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2024-03-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
