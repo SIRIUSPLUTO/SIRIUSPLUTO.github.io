@@ -1,0 +1,1531 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><div id="myscoll"></div><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>SpringBoot基础篇 | Los Santos</title><meta name="keywords" content="Java,SpringBoot,基础篇"><meta name="author" content="SIRIUSPLUTO"><meta name="copyright" content="SIRIUSPLUTO"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="🎬本文详细介绍了Java SpringBoot基础篇的学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot基础篇">
+<meta property="og:url" content="https://siriuspluto.github.io/posts/basic.html">
+<meta property="og:site_name" content="Los Santos">
+<meta property="og:description" content="🎬本文详细介绍了Java SpringBoot基础篇的学习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tuchuang.voooe.cn/images/2024/03/20/7.jpg">
+<meta property="article:published_time" content="2024-03-08T06:50:00.000Z">
+<meta property="article:modified_time" content="2024-03-20T12:06:50.605Z">
+<meta property="article:author" content="SIRIUSPLUTO">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="SpringBoot">
+<meta property="article:tag" content="基础篇">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tuchuang.voooe.cn/images/2024/03/20/7.jpg"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://siriuspluto.github.io/posts/basic"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SpringBoot基础篇',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-20 20:06:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><style id="themeColor"></style><style id="rightSide"></style><style id="transPercent"></style><style id="blurNum"></style><style id="settingStyle"></style><span id="fps"></span><style id="defineBg"></style><style id="menu_shadow"></style><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Los Santos" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang.voooe.cn/images/2023/12/12/avatar.png" onerror="onerror=null;src='/assets/r1.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--article"></use></svg><span class="menu_word" style="font-size:17px"> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1">                   </use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei">                   </use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pinweishenghuo"></use></svg><span class="menu_word" style="font-size:17px"> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-yinle">                   </use></svg><span class="menu_word" style="font-size:17px"> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/movies/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-dianying1">                   </use></svg><span class="menu_word" style="font-size:17px"> 影院</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/games/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-youxishoubing">                   </use></svg><span class="menu_word" style="font-size:17px"> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xiangzi"></use></svg><span class="menu_word" style="font-size:17px"> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/gallery/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span class="menu_word" style="font-size:17px"> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/animation/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-nvwumao">                   </use></svg><span class="menu_word" style="font-size:17px"> 动画</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/nav/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-zhifengche">                   </use></svg><span class="menu_word" style="font-size:17px"> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shejiaoxinxi"></use></svg><span class="menu_word" style="font-size:17px"> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/social/fcircle/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pengyouquan">                   </use></svg><span class="menu_word" style="font-size:17px"> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-liuyan">                   </use></svg><span class="menu_word" style="font-size:17px"> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/social/link/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-lianjie">                   </use></svg><span class="menu_word" style="font-size:17px"> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wangye"></use></svg><span class="menu_word" style="font-size:17px"> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--tongjibiao">                   </use></svg><span class="menu_word" style="font-size:17px"> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/echarts/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shujutongji1">                   </use></svg><span class="menu_word" style="font-size:17px"> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/time/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xianxingshalou">                   </use></svg><span class="menu_word" style="font-size:17px"> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-maoliang"></use></svg><span class="menu_word" style="font-size:17px"> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/personal/bb/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-qunliaotian">                   </use></svg><span class="menu_word" style="font-size:17px"> 唠叨</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/love/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-love-sign">                   </use></svg><span class="menu_word" style="font-size:17px"> 恋爱小屋</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane">                   </use></svg><span class="menu_word" style="font-size:17px"> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Los Santos</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--article"></use></svg><span class="menu_word" style="font-size:17px"> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1">                   </use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei">                   </use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pinweishenghuo"></use></svg><span class="menu_word" style="font-size:17px"> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-yinle">                   </use></svg><span class="menu_word" style="font-size:17px"> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/movies/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-dianying1">                   </use></svg><span class="menu_word" style="font-size:17px"> 影院</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/games/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-youxishoubing">                   </use></svg><span class="menu_word" style="font-size:17px"> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xiangzi"></use></svg><span class="menu_word" style="font-size:17px"> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/gallery/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span class="menu_word" style="font-size:17px"> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/animation/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-nvwumao">                   </use></svg><span class="menu_word" style="font-size:17px"> 动画</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/nav/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-zhifengche">                   </use></svg><span class="menu_word" style="font-size:17px"> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shejiaoxinxi"></use></svg><span class="menu_word" style="font-size:17px"> 社交</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/social/fcircle/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pengyouquan">                   </use></svg><span class="menu_word" style="font-size:17px"> 朋友圈</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/comments/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-liuyan">                   </use></svg><span class="menu_word" style="font-size:17px"> 留言板</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/social/link/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-lianjie">                   </use></svg><span class="menu_word" style="font-size:17px"> 友人帐</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wangye"></use></svg><span class="menu_word" style="font-size:17px"> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--tongjibiao">                   </use></svg><span class="menu_word" style="font-size:17px"> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/echarts/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-shujutongji1">                   </use></svg><span class="menu_word" style="font-size:17px"> 文章统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/time/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xianxingshalou">                   </use></svg><span class="menu_word" style="font-size:17px"> 旧时光</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-maoliang"></use></svg><span class="menu_word" style="font-size:17px"> 个人</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/personal/bb/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-qunliaotian">                   </use></svg><span class="menu_word" style="font-size:17px"> 唠叨</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/love/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-love-sign">                   </use></svg><span class="menu_word" style="font-size:17px"> 恋爱小屋</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/personal/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane">                   </use></svg><span class="menu_word" style="font-size:17px"> 关于</span></a></li></ul></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"><div id="search-button"><a class="search faa-parent animated-hover" title="检索站内任何你想要的信息"><svg class="faa-tada icon" style="height:24px;width:24px;fill:currentColor;position:relative;top:6px" aria-hidden="true"><use xlink:href="#icon-valentine_-search-love-find-heart"></use></svg><span> 搜索</span></a></div><a class="meihua faa-parent animated-hover" onclick="toggleWinbox()" title="美化设置-自定义你的风格" id="meihua-button"><svg class="faa-tada icon" style="height:26px;width:26px;fill:currentColor;position:relative;top:8px" aria-hidden="true"><use xlink:href="#icon-tupian1"></use></svg></a><a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换" id="nightmode-button"><svg class="faa-tada" style="height:25px;width:25px;fill:currentColor;position:relative;top:7px" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon">       </use></svg></a><div id="toggle-menu"><a><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">SpringBoot基础篇</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><svg class="meta_icon post-meta-icon" style="width:30px;height:30px;position:relative;top:10px"><use xlink:href="#icon-rili"></use></svg><span class="post-meta-label">发表于 </span><time class="post-meta-date-created" datetime="2024-03-08T06:50:00.000Z" title="发表于 2024-03-08 14:50:00">2024-03-08</time><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-gengxin1"></use></svg><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-20T12:06:50.605Z" title="更新于 2024-03-20 20:06:50">2024-03-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-biaoqian"></use></svg><a class="post-meta-categories" href="/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><svg class="meta_icon post-meta-icon" style="width:25px;height:25px;position:relative;top:8px"><use xlink:href="#icon-charuword"></use></svg><span class="post-meta-label">字数总计:</span><span class="word-count">8476</span><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:20px;height:20px;position:relative;top:5px"><use xlink:href="#icon-shizhong"></use></svg><span class="post-meta-label">阅读时长:</span><span>35分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SpringBoot基础篇"><svg class="meta_icon post-meta-icon" style="width:25px;height:25px;position:relative;top:5px"><use xlink:href="#icon-eye"></use></svg><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note warning flat"><p>注意：少数展示代码与图片有些许不一致是因为我用的SpringBoot的版本不同以及Settings里的命名没有完全按照黑马讲解的来导致的!，其余大部分都是黑马的。</p>
+</div>
+<h1>1. 前置知识</h1>
+<h2 id="1-1-Java基础语法">1.1 Java基础语法</h2>
+<h2 id="1-2-SpringBoot与SpringMVC">1.2 SpringBoot与SpringMVC</h2>
+<ul>
+<li>知道Spring是用来管理bean，能够基于Restful实现页面请求交互功能</li>
+</ul>
+<h2 id="1-3-Mybatis与Mybatis-Plus">1.3 Mybatis与Mybatis-Plus</h2>
+<ul>
+<li>基于Mybatis和MybatisPlus能够开发出包含基础CRUD功能的标准Dao模块</li>
+</ul>
+<h2 id="1-4-数据库MySQL">1.4 数据库MySQL</h2>
+<ul>
+<li>能够读懂基础CRUD功能的SQL语句</li>
+</ul>
+<h2 id="1-5-服务器">1.5 服务器</h2>
+<ul>
+<li>知道服务器与web工程的关系，熟悉web服务器的基础配置</li>
+</ul>
+<h2 id="1-6-maven">1.6 maven</h2>
+<ul>
+<li>知道maven的依赖关系，知道什么是依赖范围，依赖传递，排除依赖，可选依赖，继承</li>
+</ul>
+<h2 id="1-7-web技术（含vue，ElementUI">1.7 web技术（含vue，ElementUI)</h2>
+<ul>
+<li>知道vue如何发送ajax请求，如何获取响应数据，如何进行数据模型双向绑定</li>
+</ul>
+<h1>2. 快速上手SpringBoot</h1>
+<h2 id="2-1-SpringBoot入门程序开发">2.1 SpringBoot入门程序开发</h2>
+<ul>
+<li>
+<p>SpringBoot是由Pivotal团队提供的全新框架，其设计目的是用来<span class='p red'>简化</span>Spring应用的<span class='p red'>初始搭建</span>以及<span class='p red'>开发过程</span></p>
+<ul>
+<li>Spring程序缺点
+<ul>
+<li>依赖设置繁琐</li>
+<li>配置繁琐</li>
+</ul>
+</li>
+<li>SpringBoot程序优点
+<ul>
+<li>起步依赖（简化依赖配置）</li>
+<li>起步依赖（简化依赖配置）</li>
+<li>辅助功能（内置服务器，……）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>入门案例-01</p>
+<ul>
+<li>基于IDEA创建项目
+<ul>
+<li>步骤<br>
+①：创建新模块，选择Spring Initializr，并配置模块相关基础信息<br>
+![[image-20211116125259385.png]]<br>
+②：选择当前模块需要使用的技术集<br>
+![[image-20211116125615728.png]]<br>
+③：开发控制器类  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//Rest模式 </span><br><span class="line">@RestController </span><br><span class="line">@RequestMapping(&quot;/books&quot;) </span><br><span class="line">public class BookController &#123; </span><br><span class="line">	@GetMapping </span><br><span class="line">	public String getById()&#123; </span><br><span class="line">		System.out.println(&quot;springboot is running...&quot;); </span><br><span class="line">		return &quot;springboot is running...&quot;; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+④：运行自动生成的Application类<br>
+![[image-20211116130152452.png]]</li>
+</ul>
+</li>
+<li>最简SpringBoot程序所包含的基础文件
+<ul>
+<li>pom.xml文件</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; </span><br><span class="line">            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">            xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 </span><br><span class="line">            https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">       &lt;modelVersion&gt;4.0.0&lt;modelVersion&gt;</span><br><span class="line">       &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;  </span><br><span class="line">		&lt;version&gt;3.2.3&lt;/version&gt;  </span><br><span class="line">		&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.chengjie&lt;/groupId&gt;  </span><br><span class="line">	&lt;artifactId&gt;springboot_quickstart&lt;/artifactId&gt;  </span><br><span class="line">	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;  </span><br><span class="line">	&lt;name&gt;springboot_quickstart&lt;/name&gt;  </span><br><span class="line">	&lt;description&gt;springboot_quickstart&lt;/description&gt;  </span><br><span class="line">	&lt;properties&gt;        </span><br><span class="line">		&lt;java.version&gt;17&lt;/java.version&gt;  </span><br><span class="line">	&lt;/properties&gt;    </span><br><span class="line">	&lt;dependencies&gt;        </span><br><span class="line">		&lt;dependency&gt;            </span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">	        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;  </span><br><span class="line">	    &lt;/dependency&gt;  </span><br><span class="line">	    </span><br><span class="line">	    &lt;dependency&gt;            </span><br><span class="line">		    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">	        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;  </span><br><span class="line">	        &lt;scope&gt;test&lt;/scope&gt;  </span><br><span class="line">	    &lt;/dependency&gt;    </span><br><span class="line">	&lt;/dependencies&gt;  </span><br><span class="line">	</span><br><span class="line">	&lt;build&gt;        </span><br><span class="line">		&lt;plugins&gt;            </span><br><span class="line">			&lt;plugin&gt;                </span><br><span class="line">				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  </span><br><span class="line">	            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;  </span><br><span class="line">	        &lt;/plugin&gt;        </span><br><span class="line">	    &lt;/plugins&gt;    </span><br><span class="line">	&lt;/build&gt;  </span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Application类</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication </span><br><span class="line">public class Application &#123; </span><br><span class="line">	public static void main(String[] args) &#123; </span><br><span class="line">		SpringApplication.run(Application.class, args); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>Spring程序与SpringBoot程序对比<br>
+![[screenshot-1709885119939.png]]<br>
+![[screenshot-1709885520328.png]]</li>
+<li>小结<br>
+①：开发SpringBoot程序可以根据向导进行联网快速制作<br>
+②：SpringBoot程序需要基于JDK8进行制作 <code>（PS：JDK17同样可以，其他版本不清楚）</code><br>
+③：SpringBoot程序中需要使用何种功能通过勾选选择技术<br>
+④：运行SpringBoot程序通过运行Application程序入口进行</li>
+</ul>
+</li>
+<li>
+<p>入门案例-02</p>
+<ul>
+<li>基于SpringBoot官网创建项目，地址：<code>https://start.spring.io/</code>
+<ul>
+<li>步骤<br>
+①：打开官网，找到<code>Quickstart Your Project</code><br>
+![[image-20211122150444816.png]]<br>
+②：点击进入并修改settings<br>
+![[image-20211122150608039.png]]<br>
+③：最后将下载好的压缩包解压并导入SpringBoot的项目文件中</li>
+</ul>
+</li>
+<li>小结<br>
+①：打开SpringBoot官网，选择QuickstartYour Project<br>
+②：创建工程，并保存项目<br>
+③：解压项目，通过IDE导入项目</li>
+</ul>
+</li>
+<li>
+<p>入门案例-03</p>
+<ul>
+<li>基于阿里云创建项目，地址：<code>https://start.aliyun.com</code>
+<ul>
+<li>步骤 （与<code>入门案例-01</code>相同，只是提供服务的下载地址变了）<br>
+①：<br>
+![[image-20211122163605950.png]]<br>
+②：<br>
+![[image-20211122163937408.png]]<br>
+![[screenshot-1709897522188.png]]</li>
+</ul>
+</li>
+<li>小结<br>
+①：选择start来源为自定义URL<br>
+②：输入阿里云start地址<br>
+③：创建项目</li>
+</ul>
+</li>
+<li>
+<p>入门案例-04</p>
+<ul>
+<li>手工创建项目（手工导入坐标）</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">		 xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">		 xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0</span><br><span class="line">		 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;2.5.4&lt;/version&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.itheima&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;springboot_01_03_quickstart&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>手工创建项目（手工制作引导类）</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima; </span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication; </span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication; </span><br><span class="line"></span><br><span class="line">@SpringBootApplication </span><br><span class="line">public class Application &#123; </span><br><span class="line">	public static void main(String[] args) &#123; </span><br><span class="line">		SpringApplication.run(Application.class,args); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>小结<br>
+①：创建普通Maven工程<br>
+②：继承spring-boot-starter-parent<br>
+③：添加依赖spring-boot-starter-web<br>
+④：制作引导类Application</li>
+</ul>
+</li>
+<li>
+<p>小技巧：<code>隐藏指定文件/文件夹</code><br>
+![[image-20211122174020028.png]]</p>
+</li>
+</ul>
+<h2 id="2-2-浅谈入门程序工作原理">2.2 浅谈入门程序工作原理</h2>
+<ul>
+<li>入门案例解析
+<ul>
+<li><u>parent</u><br>
+![[screenshot-1709899308859.png]]<br>
+![[screenshot-1709899586708.png]]<br>
+![[screenshot-1709899657309.png]]<br>
+![[screenshot-1709899757460.png]]<br>
+![[screenshot-1709899824888.png]]<br>
+![[screenshot-1709899871830.png]]</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">		 xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">		 xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0</span><br><span class="line">		 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;2.5.4&lt;/version&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.itheima&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;springboot_01_03_quickstart&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>小结<br>
+①：开发SpringBoot程序要继承spring-boot-starter-parent<br>
+②：spring-boot-starter-parent中定义了若干个依赖管理<br>
+③：继承parent模块可以避免多个依赖使用相同技术时出现依赖版本冲突<br>
+④：继承parent的形式也可以采用引入依赖的形式实现效果</p>
+</li>
+<li>
+<p><u>starter</u><br>
+![[screenshot-1709900482207.png]]</p>
+</li>
+<li>
+<p>小结<br>
+①：开发SpringBoot程序需要导入坐标时通常导入对应的starter<br>
+②：每个不同的starter根据功能不同，通常包含多个依赖坐标<br>
+③：使用starter可以实现快速配置的效果，达到简化配置的目的</p>
+</li>
+<li>
+<p>parent与starter</p>
+<ul>
+<li>parent
+<ul>
+<li>所有SpringBoot项目要继承的项目，定义了若干个坐标版本号（依赖管理，而非依赖），以达到减少依赖冲突的目的</li>
+<li>spring-boot-starter-parent各版本间存在着诸多坐标版本不同</li>
+</ul>
+</li>
+<li>starter
+<ul>
+<li>SpringBoot中常见项目名称，定义了当前项目使用的所有依赖坐标，以达到减少依赖配置的目的</li>
+</ul>
+</li>
+<li>实际开发
+<ul>
+<li>使用任意坐标时，仅书写GAV中的G和A，V由SpringBoot提供，除非SpringBoot未提供对应版本V</li>
+<li>如发生坐标错误，再指定Version（要小心版本冲突）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><u>引导类</u></p>
+<ul>
+<li>启动方式</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication </span><br><span class="line">public class Springboot01QuickstartApplication &#123; </span><br><span class="line">	public static void main(String[] args) &#123; </span><br><span class="line">		SpringApplication.run(Springboot01QuickstartApplication.class, args);</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>SpringBoot的引导类是Boot工程的执行入口，运行main方法就可以启动项目</li>
+<li>SpringBoot工程运行后初始化Spring容器，扫描引导类所在包加载bean</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：SpringBoot工程提供引导类用来启动程序<br>
+②：SpringBoot工程启动后创建并初始化Spring容器</p>
+</li>
+<li>
+<p><u>内嵌tomcat</u></p>
+<ul>
+<li>辅助功能<br>
+![[screenshot-1709970121012.png]]</li>
+<li>使用maven依赖管理变更起步依赖项<br>
+![[screenshot-1709970242148.png]]</li>
+<li>Jetty比Tomcat更轻量级，可扩展性更强（相较于Tomcat），谷歌应用引擎（GAE）已经全面切换为Jetty</li>
+<li>内置服务器 (补充)
+<ul>
+<li>tomcat(默认)     apache出品，粉丝多，应用面广，负载了若干较重的组件</li>
+<li>jetty     更轻量级，负载性能远不及tomcat</li>
+<li>undertow     undertow，负载性能勉强跑赢tomcat</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：内嵌Tomcat服务器是SpringBoot辅助功能之一<br>
+②：内嵌Tomcat工作原理是将Tomcat服务器作为对象运行并将该对象交给Spring容器管理<br>
+③：变更内嵌服务器思想是去除现有服务器，添加全新的服务 器</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1>3. 基础配置</h1>
+<h2 id="3-1-属性配置">3.1 属性配置</h2>
+<ul>
+<li>
+<p>教你一招：<code>复制工程</code></p>
+<ul>
+<li>原则
+<ul>
+<li>保留工程基础结构</li>
+<li>抹掉原始工程痕迹</li>
+</ul>
+</li>
+<li>小结<br>
+①：在工作空间中复制对应工程，并修改工程名称<br>
+②：删除与Idea相关配置文件，仅保留src目录与pom.xml文件<br>
+③：修改pom.xml文件中的artifactId与新工程/模块名相同<br>
+④：删除name标签（可选）<br>
+⑤：保留备份工程供后期使用</li>
+</ul>
+</li>
+<li>
+<p>属性配置</p>
+<ul>
+<li>
+<p>修改服务器端口<br>
+![[screenshot-1709971668989.png]]</p>
+</li>
+<li>
+<p>SpringBoot默认配置文件application.properties，通过键值对配置对应属性</p>
+</li>
+<li>
+<p>修改配置-01</p>
+<ul>
+<li>修改服务器端口</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port=80</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：SpringBoot默认配置文件application.properties</p>
+</li>
+<li>
+<p>修改配置-02</p>
+<ul>
+<li>修改服务器端口</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port=80</span><br></pre></td></tr></table></figure>
+<ul>
+<li>关闭运行日志图标（banner）</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.main.banner-mode=off</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置日志相关</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logging.level.root=debug</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>SpringBoot内置属性查询</p>
+<ul>
+<li><code>https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties</code></li>
+<li>官方文档中参考文档第一项：Application Properties</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：SpringBoot中导入对应starter后，提供对应配置属性<br>
+②：书写SpringBoot配置采用关键字+提示形式书写</p>
+</li>
+<li>
+<p>SpringBoot提供了多种属性配置方式</p>
+<ul>
+<li>application.properties</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port=80</span><br></pre></td></tr></table></figure>
+<ul>
+<li>application.yml</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server: </span><br><span class="line">	port: 81</span><br></pre></td></tr></table></figure>
+<ul>
+<li>application.yaml</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server: </span><br><span class="line">	port: 82</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：SpringBoot提供了3种配置文件的格式</p>
+<ul>
+<li>properties（传统格式/默认格式）</li>
+<li><font color="#ff0000"><b>yml（主流格式）</b></font></li>
+<li>yaml</li>
+</ul>
+</li>
+<li>
+<p>SpringBoot配置文件加载顺序</p>
+<ul>
+<li><code>application.properties   &gt;   application.yml   &gt;   application.yaml</code></li>
+</ul>
+</li>
+<li>
+<p>常用配置文件种类</p>
+<ul>
+<li>application.yml</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：配置文件间的加载优先级</p>
+<ul>
+<li>properties（最高）</li>
+<li>yml</li>
+<li>yaml（最低）</li>
+</ul>
+<p>②：不同配置文件中相同配置按照加载优先级相互覆盖,不同配置文件中不同配置全部保留</p>
+</li>
+</ul>
+</li>
+<li>
+<p>教你一招：<code>自动提示功能消失解决方案</code><br>
+![[screenshot-1710152721542.png]]<br>
+![[screenshot-1710152789120.png]]<br>
+![[screenshot-1710152820042.png]]<br>
+![[screenshot-1710152851341.png]]<br>
+![[screenshot-1710152893143.png]]<br>
+![[screenshot-1710152925423.png]]</p>
+<ul>
+<li>小结<br>
+①：指定SpringBoot配置文件
+<ul>
+<li>Setting → Project Structure → Facets</li>
+<li>选中对应项目/工程</li>
+<li>Customize Spring Boot</li>
+<li>选择配置文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2-yaml文件">3.2 yaml文件</h2>
+<ul>
+<li><code>yaml</code>
+<ul>
+<li>
+<p>YAML（YAML Ain’t Markup Language），一种数据序列化格式</p>
+</li>
+<li>
+<p>优点：</p>
+<ul>
+<li>容易阅读</li>
+<li>容易与脚本语言交互</li>
+<li>以数据为核心，重数据轻格式</li>
+</ul>
+</li>
+<li>
+<p>YAML文件扩展名</p>
+<ul>
+<li><font color="#ff0000"><b>.yml（主流）</b></font></li>
+<li>.yaml<br>
+![[screenshot-1710153239632.png]]<br>
+![[screenshot-1710153251614.png]]<br>
+![[screenshot-1710153266333.png]]</li>
+</ul>
+</li>
+<li>
+<p>yaml语法规则</p>
+<ul>
+<li>
+<p>大小写敏感</p>
+</li>
+<li>
+<p>属性层级关系使用多行描述，每行结尾使用冒号结束</p>
+</li>
+<li>
+<p>使用缩进表示层级关系，同层级左侧对齐，只允许使用空格（不允许使用Tab键）</p>
+</li>
+<li>
+<p>属性值前面添加空格（属性名与属性值之间使用冒号+空格作为分隔）</p>
+</li>
+<li>
+<p><code>#</code>表示注释</p>
+</li>
+<li>
+<p>核心规则：<font color="#ff0000"><b>数据前面要加空格与冒号隔开</b></font></p>
+</li>
+<li>
+<p>字面值表示方式<br>
+![[screenshot-1710153525269.png]]</p>
+</li>
+<li>
+<p>数组表示方式：在属性名书写位置的下方使用减号作为数据开始符号，每行书写一个数据，减号与数据间空格分隔<br>
+![[screenshot-1710153608696.png]]</p>
+</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：yaml语法规则<br>
+②：注意属性名冒号后面与数据之间有一个<font color="#ff0000"><b>空格</b></font><br>
+③：字面值、对象数据格式、数组数据格式（略）</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-3-yaml数据读取">3.3 yaml数据读取</h2>
+<ul>
+<li>yaml数据读取
+<ul>
+<li>
+<p>使用@Value读取单个数据，属性名引用方式：<font color="#ff0000"><b>${一级属性名.二级属性名……}</b></font><br>
+![[image-20211126180433356.png]]</p>
+</li>
+<li>
+<p>小结<br>
+①：使用@Value配合SpEL读取单个数据<br>
+②：如果数据存在多层级，依次书写层级名称即可</p>
+</li>
+<li>
+<p>在配置文件中可以使用属性名引用方式引用属性<br>
+![[screenshot-1710154816784.png]]</p>
+</li>
+<li>
+<p>属性值中如果出现转移字符，需要使用双引号包裹<br>
+![[screenshot-1710154884795.png]]</p>
+</li>
+<li>
+<p>小结<br>
+①：在配置文件中可以使用${属性名}方式引用属性值<br>
+②：如果属性中出现特殊字符，可以使用双引号包裹起来作为字符解析</p>
+</li>
+<li>
+<p>封装全部数据到Environment对象<br>
+![[screenshot-1710493711606.png]]</p>
+</li>
+<li>
+<p>小结<br>
+①：使用Environment对象封装全部配置信息<br>
+②：使用@Autowired自动装配数据到Environment对象中</p>
+</li>
+<li>
+<p>自定义对象封装指定数据<br>
+![[screenshot-1710493822581.png]]</p>
+</li>
+<li>
+<p>自定义对象封装指定数据的作用<br>
+![[screenshot-1710493882242.png]]</p>
+</li>
+<li>
+<p>小结<br>
+①：使用@ConfigurationProperties注解绑定配置信息到封装类中<br>
+②：封装类需要定义为Spring管理的bean，否则无法进行属性注入</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1>4. 整合第三方技术</h1>
+<h2 id="4-1-整合JUnit">4.1 整合JUnit</h2>
+<ul>
+<li>SpringBoot整合JUnit</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest </span><br><span class="line">class Springboot07JunitApplicationTests &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private BookService bookService; </span><br><span class="line">	</span><br><span class="line">	@Test </span><br><span class="line">	public void testSave()&#123; </span><br><span class="line">		bookService.save(); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>解析</p>
+<ul>
+<li>名称：@SpringBootTest</li>
+<li>类型：<font color="#ff0000"><b>测试类注解</b></font></li>
+<li>位置：测试类定义上方</li>
+<li>作用：设置JUnit加载的SpringBoot启动类</li>
+<li>范例：</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest </span><br><span class="line">class Springboot05JUnitApplicationTests &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：导入测试对应的starter<br>
+②：测试类使用@SpringBootTest修饰<br>
+③：使用自动装配的形式添加要测试的对象</p>
+</li>
+<li>
+<p>解析</p>
+<ul>
+<li>名称：@SpringBootTest</li>
+<li>类型：测试类注解</li>
+<li>位置：测试类定义上方</li>
+<li>作用：设置JUnit加载的SpringBoot启动类</li>
+<li>范例：</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest (classes = Springboot05JUnitApplication.class)</span><br><span class="line">class Springboot07JUnitApplicationTests &#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>相关属性
+<ul>
+<li>classes：设置SpringBoot启动类<br>
+![[screenshot-1710497099681.png]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：测试类如果存在于引导类所在包或子包中无需指定引导类<br>
+②：测试类如果不存在于引导类所在的包或子包中需要通过classes 属性指定引导类</p>
+</li>
+</ul>
+<h2 id="4-2-整合MyBatis">4.2 整合MyBatis</h2>
+<ul>
+<li>
+<p>核心配置：数据库连接相关信息（连什么？连谁？什么权限）</p>
+</li>
+<li>
+<p>映射配置：SQL映射（XML/注解）</p>
+</li>
+<li>
+<p>SpringBoot整合MyBatis步骤<br>
+①：创建新模块，选择Spring初始化，并配置模块相关基础信息<br>
+![[image-20211129092156020.png]]<br>
+②：选择当前模块需要使用的技术集（MyBatis、MySQL）<br>
+![[image-20211129092210993.png]]<br>
+③：设置数据源参数<br>
+![[screenshot-1710502417819.png]]<br>
+![[screenshot-1710502432444.png]]</p>
+<ul>
+<li>
+<p>小结<br>
+①：MySQL 8.X驱动强制要求设置时区</p>
+<ul>
+<li>修改url，添加serverTimezone设定</li>
+<li>修改MySQL数据库配置（略）</li>
+</ul>
+<p>②：驱动类过时，提醒更换为<code>com.mysql.cj.jdbc.Driver</code></p>
+</li>
+</ul>
+<p>④：定义数据层接口与映射配置</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Mapper </span><br><span class="line">public interface UserDao &#123; </span><br><span class="line">	@Select(&quot;select * from user&quot;) </span><br><span class="line">	public List getAll(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>⑤：测试类中注入dao接口，测试功能</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest </span><br><span class="line">class Springboot08MybatisApplicationTests &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private BookDao bookDao; </span><br><span class="line">	</span><br><span class="line">	@Test </span><br><span class="line">	public void testGetById() &#123; </span><br><span class="line">		Book book = bookDao.getById(1); </span><br><span class="line">		System.out.println(book); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：勾选MyBatis技术，也就是导入MyBatis对应的starter<br>
+②：数据库连接相关信息转换成配置<br>
+③：数据库SQL映射需要添加@Mapper被容器识别到</p>
+</li>
+</ul>
+<h2 id="4-3-整合MyBatis-Plus">4.3 整合MyBatis-Plus</h2>
+<ul>
+<li>
+<p>MyBatis-Plus与MyBatis区别</p>
+<ul>
+<li>导入坐标不同</li>
+<li>数据层实现简化</li>
+</ul>
+</li>
+<li>
+<p>SpringBoot整合MyBatis-Plus步骤<br>
+①：手动添加SpringBoot整合MyBatis-Plus的坐标，可以通过mvnrepository获取<br>
+![[screenshot-1710587025900.png]]<br>
+![[screenshot-1710587071240.png]]<br>
+②：定义数据层接口与映射配置，继承<code>BaseMapper</code></p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Mapper </span><br><span class="line">public interface UserDao extends BaseMapper &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>③：其他同SpringBoot整合MyBatis</p>
+</li>
+<li>
+<p>小结<br>
+①：手工添加MyBatis-Plus对应的starter<br>
+②：数据层接口使用BaseMapper简化开发<br>
+③：需要使用的第三方技术无法通过勾选确定时，需要手工添加坐标</p>
+</li>
+</ul>
+<h2 id="4-4-整合Druid">4.4 整合Druid</h2>
+<ul>
+<li>指定数据源类型<br>
+![[screenshot-1710587292711.png]]</li>
+<li>导入Druid对应的starter<br>
+![[screenshot-1710587372487.png]]</li>
+<li>变更Druid的配置方式<br>
+![[screenshot-1710587463910.png]]</li>
+<li>小结<br>
+①：整合Druid需要导入Druid对应的starter<br>
+②：根据Druid提供的配置方式进行配置<br>
+③：整合第三方技术通用方式
+<ul>
+<li>导入对应的starter</li>
+<li>根据提供的配置格式，配置非默认值对应的配置项</li>
+</ul>
+</li>
+</ul>
+<h1>5. 基于SpringBoot的SSMP整合案例</h1>
+<h2 id="5-1-SSMP整合案例">5.1 SSMP整合案例</h2>
+<ul>
+<li>
+<p>案例效果演示</p>
+</li>
+<li>
+<p>案例实现方案分析</p>
+<ul>
+<li>实体类开发----使用Lombok快速制作实体类</li>
+<li>Dao开发----整合MyBatisPlus，制作数据层测试类</li>
+<li>Service开发----基于MyBatisPlus进行增量开发，制作业务层测试类</li>
+<li>Controller开发----基于Restful开发，使用PostMan测试接口功能</li>
+<li>Controller开发----前后端开发协议制作</li>
+<li>页面开发----基于VUE+ElementUI制作，前后端联调，页面数据处理，页面消息处理
+<ul>
+<li>列表、新增、修改、删除、分页、查询</li>
+</ul>
+</li>
+<li>项目异常处理</li>
+<li>按条件查询----页面功能调整、Controller修正功能、Service修正功能</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：SSMP案例效果演示<br>
+②：SSMP案例制作流程解析</p>
+<ul>
+<li>先开发基础CRUD功能，做一层测一层</li>
+<li>调通页面，确认异步提交成功后，制作所有功能</li>
+<li>添加分页功能与查询功能</li>
+</ul>
+</li>
+<li>
+<p>模块创建<br>
+![[image-20211129114306062.png]]<br>
+![[image-20211129114328967.png]]</p>
+</li>
+<li>
+<p>小结<br>
+①：勾选SpringMVC与MySQL坐标<br>
+②：修改配置文件为yml格式<br>
+③：设置端口为80方便访问</p>
+</li>
+<li>
+<p>实体类开发</p>
+<ul>
+<li>
+<p>Lombok，一个Java类库，提供了一组注解，简化POJO实体类开发<br>
+![[screenshot-1710660845623.png]]</p>
+</li>
+<li>
+<p>lombok版本由SpringBoot提供，无需指定版本</p>
+</li>
+<li>
+<p>常用注解：@Data</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Data </span><br><span class="line">public class Book &#123; </span><br><span class="line">	private Integer id; </span><br><span class="line">	private String type; </span><br><span class="line">	private String name; </span><br><span class="line">	private String description; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>为当前实体类在编译期设置对应的get/set方法，toString方法，hashCode方法，equals方法等</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：实体类制作<br>
+②：使用lombok简化开发</p>
+<ul>
+<li>导入lombok无需指定版本，由SpringBoot提供版本</li>
+<li>@Data注解</li>
+</ul>
+</li>
+<li>
+<p>数据层开发</p>
+<ul>
+<li>
+<p>技术实现方案</p>
+<ul>
+<li>MyBatisPlus</li>
+<li>Druid</li>
+</ul>
+</li>
+<li>
+<p>导入MyBatisPlus与Druid对应的starter<br>
+![[screenshot-1710661411624.png]]</p>
+</li>
+<li>
+<p>配置数据源与MyBatisPlus对应的基础配置（id生成策略使用数据库自增策略）<br>
+![[screenshot-1710661450947.png]]</p>
+</li>
+<li>
+<p>继承BaseMapper并指定泛型</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Mapper </span><br><span class="line">public interface BookDao extends BaseMapper&lt;Book&gt; &#123; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>制作测试类测试结果</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest </span><br><span class="line">public class BookDaoTest &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private BookDao bookDao; </span><br><span class="line">	</span><br><span class="line">	@Test </span><br><span class="line">	void testSave() &#123; </span><br><span class="line">		Book book = new Book(); </span><br><span class="line">		book.setName(&quot;测试数据&quot;); </span><br><span class="line">		book.setType(&quot;测试类型&quot;); </span><br><span class="line">		book.setDescription(&quot;测试描述数据&quot;); </span><br><span class="line">		bookDao.insert(book); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	@Test </span><br><span class="line">	void testGetById() &#123; </span><br><span class="line">		System.out.println(bookDao.selectById(13)); </span><br><span class="line">	&#125; </span><br><span class="line">	... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>为方便调试可以开启MyBatisPlus的日志<br>
+![[screenshot-1710661789144.png]]</li>
+</ul>
+</li>
+<li>
+<p>小结<br>
+①：手工导入starter坐标（2个）<br>
+②：配置数据源与MyBatisPlus对应的配置<br>
+③：开发Dao接口（继承BaseMapper）<br>
+④：制作测试类测试Dao功能是否有效<br>
+⑤：使用配置方式开启日志，设置日志输出方式为标准输出</p>
+<ul>
+<li>
+<p>数据层开发----分页功能</p>
+<ul>
+<li>分页操作需要设定分页对象IPage</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Test </span><br><span class="line">void testGetPage()&#123; </span><br><span class="line">	IPage page = new Page(1,5); </span><br><span class="line">	bookDao.selectPage(page,null); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>IPage对象中封装了分页操作中的所有数据
+<ul>
+<li>数据</li>
+<li>当前页码值</li>
+<li>每页数据总量</li>
+<li>最大页码值</li>
+<li>数据总量</li>
+</ul>
+</li>
+<li>分页操作是在MyBatisPlus的常规操作基础上增强得到，内部是动态的拼写SQL语句，因此需要增强对应的功能， 使用MyBatisPlus拦截器实现</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Configuration </span><br><span class="line">public class MpConfig &#123; </span><br><span class="line">	@Bean </span><br><span class="line">	public MybatisPlusInterceptor mpInterceptor() &#123; </span><br><span class="line">		//1.定义Mp拦截器 </span><br><span class="line">		MybatisPlusInterceptor mpInterceptor = new MybatisPlusInterceptor(); </span><br><span class="line">		//2.添加具体的拦截器 </span><br><span class="line">		mpInterceptor.addInnerInterceptor(new PaginationInnerInterceptor()); </span><br><span class="line">		return mpInterceptor; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：使用IPage封装分页数据<br>
+②：分页操作依赖MyBatisPlus分页拦截器实现功能<br>
+③：借助MyBatisPlus日志查阅执行SQL语句</p>
+</li>
+<li>
+<p>数据层开发----条件查询功能</p>
+<ul>
+<li>使用QueryWrapper对象封装查询条件，推荐使用LambdaQueryWrapper对象，所有查询操作封装成方法调用</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Test </span><br><span class="line">void testGetByCondition()&#123; </span><br><span class="line">	IPage page = new Page(1,10); </span><br><span class="line">	LambdaQueryWrapper&lt;Book&gt; lqw = new LambdaQueryWrapper();  </span><br><span class="line">	lqw.like(Book::getName,&quot;Spring&quot;); </span><br><span class="line">	bookDao.selectPage(page,lqw); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Test </span><br><span class="line">void testGetByCondition()&#123; </span><br><span class="line">	QueryWrapper&lt;Book&gt; qw = new QueryWrapper&lt;Book&gt;(); </span><br><span class="line">	qw.like(&quot;name&quot;,&quot;Spring&quot;); </span><br><span class="line">	bookDao.selectList(qw); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>支持动态拼写查询条件</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Test </span><br><span class="line">void testGetByCondition()&#123; </span><br><span class="line">	String name = &quot;Spring&quot;; </span><br><span class="line">	</span><br><span class="line">	IPage page = new Page(1,10); </span><br><span class="line">	LambdaQueryWrapper&lt;Book&gt; lqw = new LambdaQueryWrapper&lt;Book&gt;(); </span><br><span class="line">	lqw.like(Strings.isNotEmpty(name),Book::getName,&quot;Spring&quot;);</span><br><span class="line">	bookDao.selectPage(page,lqw); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：使用QueryWrapper对象封装查询条件<br>
+②：推荐使用LambdaQueryWrapper对象<br>
+③：所有查询操作封装成方法调用<br>
+④：查询条件支持动态条件拼装</p>
+</li>
+</ul>
+</li>
+<li>
+<p>业务层开发</p>
+<ul>
+<li>
+<p>Service层接口定义与数据层接口定义具有较大区别，不要混用</p>
+<ul>
+<li>selectByUserNameAndPassword(String username,String password);</li>
+<li>login(String username,String password);</li>
+</ul>
+</li>
+<li>
+<p>接口定义</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public interface BookService &#123; </span><br><span class="line">	boolean save(Book book); </span><br><span class="line">	boolean delete(Integer id); </span><br><span class="line">	boolean update(Book book); </span><br><span class="line">	</span><br><span class="line">	Book getById(Integer id); </span><br><span class="line">	List&lt;Book&gt; getAll(); </span><br><span class="line">	IPage&lt;Book&gt; getByPage(int currentPage,int pageSize); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现类定义</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Service </span><br><span class="line">public class BookServiceImpl implements BookService &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private BookDao bookDao; </span><br><span class="line">	</span><br><span class="line">	public Boolean save(Book book) &#123; </span><br><span class="line">		return bookDao.insert(book) &gt; 0; </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public Boolean delete(Integer id) &#123; </span><br><span class="line">		return bookDao.deleteById(id) &gt; 0; </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public Boolean update(Book book) &#123; </span><br><span class="line">		return bookDao.updateById(book) &gt; 0; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@Service </span><br><span class="line">public class BookServiceImpl implements BookService &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private BookDao bookDao; </span><br><span class="line">	</span><br><span class="line">	public Book getById(Integer id) &#123; </span><br><span class="line">		return bookDao.selectById(id); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public List&lt;Book&gt; getAll() &#123; </span><br><span class="line">		return bookDao.selectList(null); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public IPage getByPage(int currentPage, int pageSize) &#123; </span><br><span class="line">		IPage page = new Page&lt;Book&gt;(currentPage,pageSize); </span><br><span class="line">		return bookDao.selectPage(page,null); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试类定义</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest </span><br><span class="line">public class BookServiceTest &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private BookService bookService; </span><br><span class="line">	</span><br><span class="line">	@Test </span><br><span class="line">	void testGetById()&#123; </span><br><span class="line">		bookService.getById(9); </span><br><span class="line">	&#125; </span><br><span class="line">	@Test </span><br><span class="line">	void testGetAll()&#123; </span><br><span class="line">		bookService.getAll(); </span><br><span class="line">	&#125; </span><br><span class="line">	@Test </span><br><span class="line">	void testGetByPage()&#123; </span><br><span class="line">		bookService.getByPage(1,5); </span><br><span class="line">	&#125; </span><br><span class="line">	… … </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：Service接口名称定义成业务名称，并与Dao接口名称进行区分<br>
+②：制作测试类测试Service功能是否有效</p>
+<ul>
+<li>业务层开发----快速开发
+<ul>
+<li>快速开发方案
+<ul>
+<li>使用MyBatisPlus提供有业务层通用接口（<code>ISerivce&lt;T&gt;</code>）与业务层通用实现类（<br>
+<code>ServiceImpl&lt;M,T&gt;</code>）</li>
+<li>在通用类基础上做功能重载或功能追加</li>
+<li>注意重载时不要覆盖原始操作，避免原始提供的功能丢失<br>
+![[screenshot-1710669285630.png]]</li>
+</ul>
+</li>
+<li>接口定义<br>
+![[screenshot-1710669358546.png]]</li>
+<li>实现类定义</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@Service </span><br><span class="line">public class BookServiceImpl2 extends ServiceImpl&lt;BookDao,Book&gt; implements </span><br><span class="line">IBookService &#123; &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现类追加功能</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@Service </span><br><span class="line">public class BookServiceImpl2 extends ServiceImpl&lt;BookDao,Book&gt; implements              IBookService &#123;   </span><br><span class="line">	@Autowired </span><br><span class="line">	private BookDao bookDao; </span><br><span class="line">	</span><br><span class="line">	public Boolean insert(Book book) &#123; </span><br><span class="line">		return bookDao.insert(book) &gt; 0; </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public Boolean modify(Book book) &#123; </span><br><span class="line">		return bookDao.updateById(book) &gt; 0; </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public Boolean delete(Integer id) &#123; </span><br><span class="line">		return bookDao.deleteById(id) &gt; 0; </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public Book get(Integer id) &#123; </span><br><span class="line">		return bookDao.selectById(id); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试类定义（略）</li>
+</ul>
+</li>
+<li>小结<br>
+①：使用通用接口（<code>ISerivce&lt;T&gt;</code>）快速开发Service<br>
+②：使用通用实现类（<code>ServiceImpl&lt;M,T&gt;</code>）快速开发ServiceImpl<br>
+③：可以在通用接口基础上做功能重载或功能追加<br>
+④：注意重载时不要覆盖原始操作，避免原始提供的功能丢失</li>
+</ul>
+</li>
+<li>
+<p>表现层开发</p>
+<ul>
+<li>
+<p>基于Restful进行表现层接口开发</p>
+</li>
+<li>
+<p>使用Postman测试表现层接口功能</p>
+</li>
+<li>
+<p>功能测试</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@RestController </span><br><span class="line">@RequestMapping(&quot;/books&quot;) </span><br><span class="line">public class BookController &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private IBookService bookService; </span><br><span class="line">	@GetMapping </span><br><span class="line">	public List&lt;Book&gt; getAll()&#123; </span><br><span class="line">		return bookService.list(); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>表现层接口开发</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">@RestController </span><br><span class="line">@RequestMapping(&quot;/books&quot;) </span><br><span class="line">public class BookController &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private IBookService bookService; </span><br><span class="line">	</span><br><span class="line">	@PostMapping </span><br><span class="line">	public Boolean save(@RequestBody Book book)&#123; </span><br><span class="line">		return bookService.insert(book); </span><br><span class="line">	&#125; </span><br><span class="line">		</span><br><span class="line">	@PutMapping </span><br><span class="line">	public Boolean update(@RequestBody Book book)&#123; </span><br><span class="line">		return bookService.modify(book); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	@DeleteMapping(&quot;/&#123;id&#125;&quot;) </span><br><span class="line">	public Boolean delete(@PathVariable Integer id)&#123; </span><br><span class="line">		return bookService.delete(id); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@RestController </span><br><span class="line">@RequestMapping(&quot;/books&quot;) </span><br><span class="line">public class BookController &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private IBookService bookService; </span><br><span class="line">	</span><br><span class="line">	@GetMapping(&quot;/&#123;id&#125;&quot;) </span><br><span class="line">	public Book getById(@PathVariable Integer id)&#123; </span><br><span class="line">		return bookService.getById(id); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	@GetMapping </span><br><span class="line">	public List&lt;Book&gt; getAll()&#123; </span><br><span class="line">		return bookService.list(); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	@GetMapping(&quot;/&#123;currentPage&#125;/&#123;pageSize&#125;&quot;) </span><br><span class="line">	public List&lt;Book&gt; getAll(@PathVariable Integer currentPage,@PathVariable </span><br><span class="line">	Integer pageSize)&#123; </span><br><span class="line">		return bookService.getPage(currentPage,pageSize).getRecords(); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：基于Restful制作表现层接口</p>
+<ul>
+<li>新增：POST</li>
+<li>删除：DELETE</li>
+<li>修改：PUT</li>
+<li>查询：GET</li>
+</ul>
+<p>②：接收参数</p>
+<ul>
+<li>
+<p>实体数据：@RequestBody</p>
+</li>
+<li>
+<p>路径变量：@PathVariable</p>
+</li>
+<li>
+<p>表现层消息一致性处理</p>
+<ul>
+<li>设计表现层返回结果的模型类，用于后端与前端进行数据格式统一，也称为<code>前后端数据协议</code></li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@Data </span><br><span class="line">public class R&#123; </span><br><span class="line">	private Boolean flag;</span><br><span class="line">	private Object data;  </span><br><span class="line">	</span><br><span class="line">	public R()&#123; </span><br><span class="line">	&#125;  </span><br><span class="line">	</span><br><span class="line">	public R(Boolean flag)&#123; </span><br><span class="line">		this.flag = flag; </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	public R(Boolean flag,Object data)&#123; </span><br><span class="line">		this.flag = flag; </span><br><span class="line">		this.data = data; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>表现层接口统一返回值类型结果</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@RestController </span><br><span class="line">@RequestMapping(&quot;/books&quot;) </span><br><span class="line">public class BookController &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private IBookService bookService; </span><br><span class="line">	</span><br><span class="line">	@PostMapping </span><br><span class="line">	public R save(@RequestBody Book book)&#123; </span><br><span class="line">		Boolean flag = bookService.insert(book); </span><br><span class="line">		return new R(flag); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	@PutMapping </span><br><span class="line">	public R update(@RequestBody Book book)&#123; </span><br><span class="line">		Boolean flag = bookService.modify(book); </span><br><span class="line">		return new R(flag); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@RestController </span><br><span class="line">@RequestMapping(&quot;/books&quot;) </span><br><span class="line">public class BookController &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private IBookService bookService; </span><br><span class="line">	</span><br><span class="line">	@DeleteMapping(&quot;/&#123;id&#125;&quot;) </span><br><span class="line">	public R delete(@PathVariable Integer id)&#123; </span><br><span class="line">		Boolean flag = bookService.delete(id); </span><br><span class="line">		return new R(flag); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	@GetMapping(&quot;/&#123;id&#125;&quot;) </span><br><span class="line">	public R getById(@PathVariable Integer id)&#123; </span><br><span class="line">		Book book = bookService.getById(id); </span><br><span class="line">		return new R(true,book); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@RestController </span><br><span class="line">@RequestMapping(&quot;/books&quot;) </span><br><span class="line">public class BookController &#123; </span><br><span class="line">	@Autowired </span><br><span class="line">	private IBookService bookService; </span><br><span class="line">	</span><br><span class="line">	@GetMapping </span><br><span class="line">	public R getAll()&#123; </span><br><span class="line">		List&lt;Book&gt; bookList = bookService.list(); </span><br><span class="line">		return new R(true,bookList); </span><br><span class="line">	&#125; </span><br><span class="line">	</span><br><span class="line">	@GetMapping(&quot;/&#123;currentPage&#125;/&#123;pageSize&#125;&quot;) </span><br><span class="line">	public R getAll(@PathVariable Integer currentPage,@PathVariable Integer </span><br><span class="line">	pageSize)&#123; </span><br><span class="line">		IPage&lt;Book&gt; page = bookService.getPage(currentPage, pageSize); </span><br><span class="line">		return new R(true,page); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：设计统一的返回值结果类型便于前端开发读取数据<br>
+②：返回值结果类型可以根据需求自行设定，没有固定格式<br>
+③：返回值结果模型类用于后端与前端进行数据格式统一，也称为前 后端数据协议</p>
+</li>
+</ul>
+</li>
+<li>
+<p>前后端协议联调</p>
+<ul>
+<li>
+<p>前后端分离结构设计中页面归属前端服务器</p>
+</li>
+<li>
+<p>单体工程中页面放置在resources目录下的static目录中（建议执行clean）</p>
+</li>
+<li>
+<p>前端发送异步请求，调用后端接口</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//列表 </span><br><span class="line">getAll() &#123; </span><br><span class="line">	axios.get(&quot;/books&quot;).then((res)=&gt;&#123; </span><br><span class="line">		console.log(res.data); </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>小结<br>
+①：单体项目中页面放置在resources/static目录下<br>
+②：created钩子函数用于初始化页面时发起调用<br>
+③：页面使用axios发送异步请求获取数据后确认前后端是否联通</p>
+</li>
+<li>
+<p>列表页</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//列表 </span><br><span class="line">getAll() &#123; </span><br><span class="line">	axios.get(&quot;/books&quot;).then((res)=&gt;&#123; </span><br><span class="line">		this.dataList = res.data.data; </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>小结<br>
+①：将查询数据返回到页面，利用前端数据双向绑定进行数据展示</p>
+</li>
+<li>
+<p>弹出添加窗口</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//弹出添加窗口 </span><br><span class="line">handleCreate() &#123; </span><br><span class="line">	this.dialogFormVisible = true; </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>清除数据</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//重置表单 </span><br><span class="line">resetForm() &#123; </span><br><span class="line">	this.formData = &#123;&#125;; </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//弹出添加窗口 </span><br><span class="line">handleCreate() &#123; </span><br><span class="line">	this.dialogFormVisible = true; </span><br><span class="line">	this.resetForm(); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//添加 </span><br><span class="line">handleAdd () &#123; </span><br><span class="line">	//发送异步请求 </span><br><span class="line">	axios.post(&quot;/books&quot;,this.formData).then((res)=&gt;&#123; </span><br><span class="line">		//如果操作成功，关闭弹层，显示数据 </span><br><span class="line">		if(res.data.flag)&#123; </span><br><span class="line">			this.dialogFormVisible = false; </span><br><span class="line">			this.$message.success(&quot;添加成功&quot;); </span><br><span class="line">		&#125;else &#123; </span><br><span class="line">			this.$message.error(&quot;添加失败&quot;); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;).finally(()=&gt;&#123; </span><br><span class="line">		this.getAll();</span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>取消添加</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//取消 </span><br><span class="line">cancel()&#123; </span><br><span class="line">	this.dialogFormVisible = false; </span><br><span class="line">	this.$message.info(&quot;操作取消&quot;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>小结<br>
+①：请求方式使用POST调用后台对应操作<br>
+②：添加操作结束后动态刷新页面加载数据<br>
+③：根据操作结果不同，显示对应的提示信息<br>
+④：弹出添加Div时清除表单数据</p>
+</li>
+<li>
+<p>删除</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> // 删除 </span><br><span class="line"> handleDelete(row) &#123; </span><br><span class="line">	 axios.delete(&quot;/books/&quot;+row.id).then((res)=&gt;&#123; </span><br><span class="line">		 if(res.data.flag)&#123; </span><br><span class="line">			 this.$message.success(&quot;删除成功&quot;); </span><br><span class="line">		&#125;else&#123; </span><br><span class="line">			this.$message.error(&quot;删除失败&quot;); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;).finally(()=&gt;&#123; </span><br><span class="line">		this.getAll(); </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 删除 </span><br><span class="line">handleDelete(row) &#123; </span><br><span class="line">	//1.弹出提示框 </span><br><span class="line">	this.$confirm(&quot;此操作永久删除当前数据，是否继续？&quot;,&quot;提示&quot;,&#123; </span><br><span class="line">		type:&#x27;info&#x27; </span><br><span class="line">	&#125;).then(()=&gt;&#123; </span><br><span class="line">		//2.做删除业务 </span><br><span class="line">		axios.delete(&quot;/books/&quot;+row.id).then((res)=&gt;&#123; </span><br><span class="line">			…… </span><br><span class="line">		&#125;).finally(()=&gt;&#123; </span><br><span class="line">			this.getAll(); </span><br><span class="line">		&#125;); </span><br><span class="line">	&#125;).catch(()=&gt;&#123; </span><br><span class="line">		//3.取消删除 </span><br><span class="line">		this.$message.info(&quot;取消删除操作&quot;); </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>小结<br>
+①：请求方式使用Delete调用后台对应操作<br>
+②：删除操作需要传递当前行数据对应的id值到后台<br>
+③：删除操作结束后动态刷新页面加载数据<br>
+④：根据操作结果不同，显示对应的提示信息<br>
+⑤：删除操作前弹出提示框避免误操作</p>
+</li>
+<li>
+<p>弹出修改窗口</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//弹出编辑窗口 </span><br><span class="line">handleUpdate(row) &#123; </span><br><span class="line">	axios.get(&quot;/books/&quot;+row.id).then((res)=&gt;&#123; </span><br><span class="line">		if(res.data.flag)&#123; </span><br><span class="line">			//展示弹层，加载数据 </span><br><span class="line">			this.formData = res.data.data; </span><br><span class="line">			this.dialogFormVisible4Edit = true; </span><br><span class="line">		&#125;else&#123; </span><br><span class="line">			this.$message.error(&quot;数据同步失败，自动刷新&quot;); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除消息维护</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//删除 </span><br><span class="line">handleDelete(row) &#123; </span><br><span class="line">	axios.delete(&quot;/books/&quot;+row.id).then((res)=&gt;&#123; </span><br><span class="line">		if(res.data.flag)&#123; </span><br><span class="line">			this.$message.success(&quot;删除成功&quot;); </span><br><span class="line">		&#125;else&#123; </span><br><span class="line">			this.$message.error(&quot;数据同步失败，自动刷新&quot;); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;).finally(()=&gt;&#123; </span><br><span class="line">		this.getAll(); </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>小结<br>
+①：加载要修改数据通过传递当前行数据对应的id值到后台查询数据<br>
+②：利用前端数据双向绑定将查询到的数据进行回显</p>
+</li>
+<li>
+<p>修改</p>
+</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//修改 </span><br><span class="line">handleEdit() &#123; </span><br><span class="line">	axios.put(&quot;/books&quot;,this.formData).then((res)=&gt;&#123; </span><br><span class="line">		//如果操作成功，关闭弹层并刷新页面 </span><br><span class="line">		if(res.data.flag)&#123; </span><br><span class="line">			this.dialogFormVisible4Edit = false; </span><br><span class="line">			this.$message.success(&quot;修改成功&quot;); </span><br><span class="line">		&#125;else &#123; </span><br><span class="line">			this.$message.error(&quot;修改失败，请重试&quot;); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;).finally(()=&gt;&#123; </span><br><span class="line">		this.getAll(); </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>取消添加和修改</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cancel()&#123; </span><br><span class="line">	this.dialogFormVisible = false; </span><br><span class="line">	this.dialogFormVisible4Edit = false; </span><br><span class="line">	this.$message.info(&quot;操作取消&quot;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>小结<br>
+①：请求方式使用PUT调用后台对应操作<br>
+②：修改操作结束后动态刷新页面加载数据（同新增）<br>
+③：根据操作结果不同，显示对应的提示信息（同新增 ）</li>
+</ul>
+</li>
+<li>
+<p>业务消息一致性处理</p>
+<ul>
+<li>业务操作成功或失败返回数据格式<br>
+![[screenshot-1710934241999.png]]</li>
+<li>后台代码BUG导致数据格式不统一性<br>
+![[screenshot-1710934283147.png]]</li>
+<li>对异常进行统一处理，出现异常后，返回指定信息</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@RestControllerAdvice </span><br><span class="line">public class ProjectExceptionAdvice &#123; </span><br><span class="line">	@ExceptionHandler(Exception.class) </span><br><span class="line">	public R doOtherException(Exception ex)&#123; </span><br><span class="line">		//记录日志 </span><br><span class="line">		//发送消息给运维 </span><br><span class="line">		//发送邮件给开发人员,ex对象发送给开发人员 </span><br><span class="line">		ex.printStackTrace(); </span><br><span class="line">		return new R(false,null,&quot;系统错误，请稍后再试！&quot;); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改表现层返回结果的模型类，封装出现异常后对应的信息
+<ul>
+<li>flag：false</li>
+<li>Data: null</li>
+<li>消息(msg): 要显示信息</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@Data </span><br><span class="line">public class R&#123; </span><br><span class="line">	private Boolean flag; </span><br><span class="line">	private Object data; </span><br><span class="line">	private String msg; </span><br><span class="line">	</span><br><span class="line">	public R(Boolean flag,Object data,String msg)&#123; </span><br><span class="line">		this.flag = flag; </span><br><span class="line">		this.data = data; </span><br><span class="line">		this.msg = msg; </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>页面消息处理，没有传递消息加载默认消息，传递消息后加载指定消息</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//添加 </span><br><span class="line">handleAdd () &#123; </span><br><span class="line">	//发送ajax请求 </span><br><span class="line">	axios.post(&quot;/books&quot;,this.formData).then((res)=&gt;&#123; </span><br><span class="line">		//如果操作成功，关闭弹层，显示数据 </span><br><span class="line">		if(res.data.flag)&#123; </span><br><span class="line">			this.dialogFormVisible = false; </span><br><span class="line">			this.$message.success(&quot;添加成功&quot;); </span><br><span class="line">		&#125;else &#123; </span><br><span class="line">			this.$message.error(res.data.msg); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;).finally(()=&gt;&#123; </span><br><span class="line">		this.getAll();</span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以在表现层Controller中进行消息统一处理</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@PostMapping </span><br><span class="line">public R save(@RequestBody Book book) throws IOException &#123; </span><br><span class="line">	Boolean flag = bookService.insert(book); </span><br><span class="line">	return new R(flag , flag ? &quot;添加成功^_^&quot; : &quot;添加失败-_-!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>目的：国际化</li>
+<li>页面消息处理</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//添加 </span><br><span class="line">handleAdd () &#123; </span><br><span class="line">	//发送ajax请求 </span><br><span class="line">	axios.post(&quot;/books&quot;,this.formData).then((res)=&gt;&#123; </span><br><span class="line">		if(res.data.flag)&#123; </span><br><span class="line">			this.dialogFormVisible = false; </span><br><span class="line">			this.$message.success(res.data.msg); </span><br><span class="line">		&#125;else &#123; </span><br><span class="line">			this.$message.error(res.data.msg); </span><br><span class="line">		&#125; </span><br><span class="line">	&#125;).finally(()=&gt;&#123; </span><br><span class="line">		this.getAll(); </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：使用注解@RestControllerAdvice定义SpringMVC异常处理 器用来处理异常的<br>
+②：异常处理器必须被扫描加载，否则无法生效<br>
+③：表现层返回结果的模型类中添加消息属性用来传递消息到页面</p>
+</li>
+<li>
+<p>分页功能</p>
+<ul>
+<li>页面使用el分页组件添加分页功能<br>
+![[screenshot-1710934792325.png]]</li>
+<li>定义分页组件需要使用的数据并将数据绑定到分页组件<br>
+![[screenshot-1710934832215.png]]</li>
+<li>替换查询全部功能为分页功能</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getAll() &#123;</span><br><span class="line">	axios.get(&quot;/books/&quot;+this.pagination.currentPage+</span><br><span class="line">	&quot;/&quot;+this.pagination.pageSize).then((res) =&gt; &#123;</span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分页查询</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(&quot;/&#123;currentPage&#125;/&#123;pageSize&#125;&quot;) </span><br><span class="line">public R getAll(@PathVariable Integer currentPage,@PathVariable Integer pageSize)&#123; </span><br><span class="line">	IPage&lt;Book&gt; pageBook = bookService.getPage(currentPage, pageSize); </span><br><span class="line">	return new R(null != pageBook ,pageBook);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用路径参数传递分页数据或封装对象传递数据</li>
+<li>加载分页数据</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getAll() &#123; </span><br><span class="line">	axios.get(&quot;/books/&quot;+this.pagination.currentPage+&quot;/&quot;</span><br><span class="line">	+this.pagination.pageSize).then((res) =&gt; &#123; </span><br><span class="line">		this.pagination.total = res.data.data.total; </span><br><span class="line">		this.pagination.currentPage = res.data.data.current; </span><br><span class="line">		this.pagination.pagesize = res.data.data.size; </span><br><span class="line">		this.dataList = res.data.data.records; </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分页页码值切换</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//切换页码 </span><br><span class="line">handleCurrentChange(currentPage) &#123; </span><br><span class="line">	this.pagination.currentPage = currentPage; </span><br><span class="line">	this.getAll(); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：使用el分页组件<br>
+②：定义分页组件绑定的数据模型<br>
+③：异步调用获取分页数据<br>
+④：分页数据页面回显</p>
+</li>
+<li>
+<p>删除功能维护</p>
+<ul>
+<li>对查询结果进行校验，如果当前页码值大于最大页码值，使用最大页码值作为当前页码值重新查询</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(&quot;&#123;currentPage&#125;/&#123;pageSize&#125;&quot;) </span><br><span class="line">public R getPage(@PathVariable int currentPage,@PathVariable int pageSize)&#123; </span><br><span class="line">	IPage&lt;Book&gt; page = bookService.getPage(currentPage, pageSize); </span><br><span class="line">	//如果当前页码值大于了总页码值，那么重新执行查询操作，使用最大页码值作为当前页码值 </span><br><span class="line">	if( currentPage &gt; page.getPages())&#123; </span><br><span class="line">		page = bookService.getPage((int)page.getPages(), pageSize); </span><br><span class="line">	&#125; </span><br><span class="line">	return new R(true, page); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：基于业务需求维护删除功能</p>
+</li>
+<li>
+<p>条件查询功能</p>
+<ul>
+<li>查询条件数据封装
+<ul>
+<li>单独封装</li>
+<li>与分页操作混合封装<br>
+![[screenshot-1710935449239.png]]</li>
+</ul>
+</li>
+<li>页面数据模型绑定<br>
+![[screenshot-1710935485745.png]]</li>
+<li>组织数据成为get请求发送的数据</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getAll() &#123; </span><br><span class="line">	//1.获取查询条件,拼接查询条件 </span><br><span class="line">	param = &quot;?name=&quot;+this.pagination.name; </span><br><span class="line">	param += &quot;&amp;type=&quot;+this.pagination.type; </span><br><span class="line">	param += &quot;&amp;description=&quot;+this.pagination.description; </span><br><span class="line">	console.log(&quot;-----------------&quot;+ param); </span><br><span class="line">	axios.get(&quot;/books/&quot;+this.pagination.currentPage+&quot;/&quot;</span><br><span class="line">	+this.pagination.pageSize+param) .then((res) =&gt; &#123; </span><br><span class="line">		this.dataList = res.data.data.records; </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<ul>
+<li>条件参数组织可以通过条件判定书写的更简洁</li>
+<li>Controller接收参数</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(&quot;&#123;currentPage&#125;/&#123;pageSize&#125;&quot;) </span><br><span class="line">public R getAll(@PathVariable int currentPage,@PathVariable int pageSize,</span><br><span class="line">Book book) &#123; </span><br><span class="line">	System.out.println(&quot;参数=====&gt;&quot;+book); </span><br><span class="line">	IPage&lt;Book&gt; pageBook = bookService.getPage(currentPage,pageSize); </span><br><span class="line">	return new R(null != pageBook ,pageBook); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>业务层接口功能开发</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface IBookService extends IService&lt;Book&gt; &#123; </span><br><span class="line">	IPage&lt;Book&gt; getPage(Integer currentPage,Integer pageSize,Book queryBook); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Service </span><br><span class="line">public class BookServiceImpl2 extends ServiceImpl&lt;BookDao,Book&gt; implements </span><br><span class="line">IBookService &#123; </span><br><span class="line">	public IPage getPage(Integer currentPage,Integer pageSize,Book queryBook)&#123; </span><br><span class="line">		IPage&lt;Book&gt; page = new Page(currentPage,pageSize); </span><br><span class="line">		LambdaQueryWrapper&lt;Book&gt; lqw = new LambdaQueryWrapper(); </span><br><span class="line">		lqw.like(Strings.isNotEmpty(queryBook.getName()),</span><br><span class="line">		Book::getName,queryBook.getName()); </span><br><span class="line">		lqw.like(Strings.isNotEmpty(queryBook.getType()),</span><br><span class="line">		Book::getType,queryBook.getType()); </span><br><span class="line">		lqw.like(Strings.isNotEmpty(queryBook.getDescription()), </span><br><span class="line">		Book::getDescription,queryBook.getDescription()); </span><br><span class="line">		return bookDao.selectPage(page,lqw); </span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Controller调用业务层分页条件查询接口</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@GetMapping(&quot;&#123;currentPage&#125;/&#123;pageSize&#125;&quot;) </span><br><span class="line">public R getAll(@PathVariable int currentPage,@PathVariable int pageSize,</span><br><span class="line">Book book) &#123; </span><br><span class="line">	IPage&lt;Book&gt; pageBook = bookService.getPage(currentPage,pageSize,book); </span><br><span class="line">	return new R(null != pageBook ,pageBook); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>页面回显数据</li>
+</ul>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">getAll() &#123; </span><br><span class="line">	//1.获取查询条件,拼接查询条件 </span><br><span class="line">	param = &quot;?name=&quot;+this.pagination.name; </span><br><span class="line">	param += &quot;&amp;type=&quot;+this.pagination.type; </span><br><span class="line">	param += &quot;&amp;description=&quot;+this.pagination.description; </span><br><span class="line">	console.log(&quot;-----------------&quot;+param); </span><br><span class="line">	axios.get(&quot;/books/&quot;+this.pagination.currentPage+&quot;/&quot;</span><br><span class="line">	+this.pagination.pageSize+param) .then((res) =&gt; &#123; </span><br><span class="line">		this.pagination.total = res.data.data.total; </span><br><span class="line">		this.pagination.currentPage = res.data.data.current; </span><br><span class="line">		this.pagination.pagesize = res.data.data.size; </span><br><span class="line">		this.dataList = res.data.data.records; </span><br><span class="line">	&#125;); </span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小结<br>
+①：定义查询条件数据模型（当前封装到分页数据模型中）<br>
+②：异步调用分页功能并通过请求参数传递数据到后台</p>
+</li>
+<li>
+<p>基于SpringBoot的SSMP整合案例</p>
+<ul>
+<li>pom.xml<br>
+<code>配置起步依赖</code></li>
+<li>application.yml<br>
+<code>设置数据源、端口、框架技术相关配置等</code></li>
+<li>dao<br>
+<code>继承BaseMapper、设置@Mapper</code></li>
+<li>dao测试类</li>
+<li>service<br>
+<code>调用数据层接口或MyBatis-Plus提供的接口快速开发</code></li>
+<li>service测试类</li>
+<li>controller<br>
+<code>基于Restful开发，使用Postman测试跑通功能</code></li>
+<li>页面<br>
+<code>放置在resources目录下的static目录中</code></li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>SpringBoot基础篇</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://siriuspluto.github.io/posts/basic.html">https://siriuspluto.github.io/posts/basic.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>SIRIUSPLUTO</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-03-08</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-03-20</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>Java</a><a class="post-meta__tags" href="/tags/SpringBoot/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>SpringBoot</a><a class="post-meta__tags" href="/tags/%E5%9F%BA%E7%A1%80%E7%AF%87/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>基础篇</a></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/general.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang.voooe.cn/images/2024/03/20/12.png" onerror="onerror=null;src='/assets/r2.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot总体概括</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/general.html" title="SpringBoot总体概括"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang.voooe.cn/images/2024/03/20/12.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2024-03-15</div><div class="title">SpringBoot总体概括</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><svg class="meta_icon" style="width:22px;height:22px;position:relative;top:5px"><use xlink:href="#icon-mulu1"></use></svg><span style="font-weight:bold">目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">1. 前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-text">1.1 Java基础语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-SpringBoot%E4%B8%8ESpringMVC"><span class="toc-text">1.2 SpringBoot与SpringMVC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-Mybatis%E4%B8%8EMybatis-Plus"><span class="toc-text">1.3 Mybatis与Mybatis-Plus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E6%95%B0%E6%8D%AE%E5%BA%93MySQL"><span class="toc-text">1.4 数据库MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">1.5 服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-maven"><span class="toc-text">1.6 maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-web%E6%8A%80%E6%9C%AF%EF%BC%88%E5%90%ABvue%EF%BC%8CElementUI"><span class="toc-text">1.7 web技术（含vue，ElementUI)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">2. 快速上手SpringBoot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-SpringBoot%E5%85%A5%E9%97%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91"><span class="toc-text">2.1 SpringBoot入门程序开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%B5%85%E8%B0%88%E5%85%A5%E9%97%A8%E7%A8%8B%E5%BA%8F%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">2.2 浅谈入门程序工作原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">3. 基础配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE"><span class="toc-text">3.1 属性配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-yaml%E6%96%87%E4%BB%B6"><span class="toc-text">3.2 yaml文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-yaml%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="toc-text">3.3 yaml数据读取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">4. 整合第三方技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E6%95%B4%E5%90%88JUnit"><span class="toc-text">4.1 整合JUnit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E6%95%B4%E5%90%88MyBatis"><span class="toc-text">4.2 整合MyBatis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%95%B4%E5%90%88MyBatis-Plus"><span class="toc-text">4.3 整合MyBatis-Plus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E6%95%B4%E5%90%88Druid"><span class="toc-text">4.4 整合Druid</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">5. 基于SpringBoot的SSMP整合案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-SSMP%E6%95%B4%E5%90%88%E6%A1%88%E4%BE%8B"><span class="toc-text">5.1 SSMP整合案例</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-color: transparent;"><div id="footer-wrap"><div id="ft"><div class="ft-item-1"><div class="t-top"><div class="t-t-l"><p class="ft-t t-l-t">格言🧬</p><div class="bg-ad"><div>再看看那个光点，它就在这里，这是家园，这是我们 —— 你所爱的每一个人，你认识的一个人，你听说过的每一个人，曾经有过的每一个人，都在它上面度过他们的一生✨</div><div class="btn-xz-box"><a class="btn-xz" target="_blank" rel="noopener" href="https://stellarium.org/">点击开启星辰之旅</a></div></div></div><div class="t-t-r"><p class="ft-t t-l-t">猜你想看💡</p><ul class="ft-links"><li><a href="/posts/eec9786.html">魔改指南</a><a href="/box/nav/">网址导航</a></li><li><a href="/social/link/">我的朋友</a><a href="/comments/">留点什么</a></li><li><a href="/personal/about/">关于作者</a><a href="/archives/">文章归档</a></li><li><a href="/categories/">文章分类</a><a href="/tags/">文章标签</a></li><li><a href="/box/Gallery/">我的画廊</a><a href="/personal/bb/">我的唠叨</a></li><li><a href="/site/time/">建设进程</a><a href="/site/census/">网站统计</a></li></ul></div></div></div><div class="ft-item-2"><p class="ft-t">推荐友链⌛</p><div class="ft-img-group"><div class="img-group-item"><a target="_blank" rel="noopener" href="https://www.fomal.cc/" title="Fomalhaut🥝"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/60e5d4e39da7c077.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div><div class="img-group-item"><a href="javascript:void(0)" title="广告位招租"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://lskypro.acozycotage.net/LightPicture/2022/12/65307a5828af6790.webp" alt=""/></a></div></div></div></div><div class="copyright"><span><b>&copy;2023-2024</b></span><span><b>&nbsp;&nbsp;By SIRIUSPLUTO</b></span></div><div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title="博客框架为Hexo_v6.3.0"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Frame-Hexo-blue.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title="主题版本Butterfly_v4.3.1"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Theme-Butterfly-6513df.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title="本站采用多线部署，主线路托管于Vercel"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Hosted-Vercel-brightgreen.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://user.51.la/" style="margin-inline:5px" title="本站数据分析得益于51la技术支持"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/Analytics-51la-3db1eb.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://icp.gov.moe/?keyword=20226665" style="margin-inline:5px" title="本站已加入萌ICP豪华套餐，萌ICP备20226665号"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/萌ICP备-20226665-fe1384.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://bitiful.dogecast.com/buckets" style="margin-inline:5px" title="本网站经Service Worker分流至缤纷云对象存储"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src=" https://sourcebucket.s3.ladydaily.com/badge/Bucket-缤纷云-9c62da.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://www.netdun.net/" style="margin-inline:5px" title="本站使用网盾星球提供CDN加速与防护"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://sourcebucket.s3.ladydaily.com/badge/CDN-网盾星球-fff2cc.svg" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title="本网站源码由Github提供存储仓库"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src=" https://sourcebucket.s3.ladydaily.com/badge/Source-Github-d021d6.svg" alt=""/></a></p></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button><button class="share" type="button" title="右键模式" onclick="changeMouseMode()"><i class="fas fa-mouse"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog right_side"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-search"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="fa fa-copy"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="fas fa-comment"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="fa fa-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="fa fa-download"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="fa fa-copy"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:randomPost()"><i class="fa fa-paper-plane"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:switchNightMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.switchReadMode();"><i class="fa fa-book"></i><span>阅读模式</span></a><a class="rightMenu-item" href="/personal/about/"><i class="fa fa-info-circle"></i><span>关于博客</span></a><a class="rightMenu-item" href="javascript:toggleWinbox();"><i class="fas fa-cog"></i><span>美化设置</span></a><a class="rightMenu-item" href="javascript:rmf.fullScreen();"><i class="fas fa-expand"></i><span>切换全屏</span></a><a class="rightMenu-item" href="javascript:window.print();"><i class="fa-solid fa-print"></i><span>打印页面</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js" type="module"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://siriuspluto.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://siriuspluto.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="5212729721" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="false"> </div><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="/js/txmap.js"></script><script async data-pjax src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script><script async data-pjax src="/js/newYear.js"></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script async src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script defer src="https://cdn1.tianli0.top/gh/nextapps-de/winbox/dist/winbox.bundle.min.js"></script><script async src="//at.alicdn.com/t/c/font_3586335_hsivh70x0fm.js"></script><script async src="//at.alicdn.com/t/c/font_3636804_gr02jmjr3y9.js"></script><script async src="//at.alicdn.com/t/c/font_3612150_kfv55xn3u2g.js"></script><script async src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script><canvas id="universe"></canvas><canvas id="snow"></canvas><script defer src="/js/fomal.js"></script><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax","#bibi","body > title","#app","#tag-echarts","#posts-echart","#categories-echarts"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://SIRIUSPLUTO.github.io/categories/Java/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🍟 SIRIUSPLUTOのJava学习笔记 (2)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://SIRIUSPLUTO.github.io/categories/演示/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🍥 SIRIUSPLUTOの案例演示笔记 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="https://SIRIUSPLUTO.github.io/categories/" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(33.333333333333336% - 5px);background: #e9e9e9;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: var(--text-bg-hover)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/basic.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang.voooe.cn/images/2024/03/20/7.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-03-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/basic.html&quot;);" href="javascript:void(0);" alt="">SpringBoot基础篇</a><div class="blog-slider__text">🎬本文详细介绍了Java SpringBoot基础篇的学习</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/basic.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/2013454d.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang.voooe.cn/images/2023/12/12/3.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-08-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/2013454d.html&quot;);" href="javascript:void(0);" alt="">Markdown语法与外挂标签写法汇总</a><div class="blog-slider__text">🥧本文汇总Markdown格式以及外挂标签在网页端的渲染效果，可作为文档进行查询</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/2013454d.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/general.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://tuchuang.voooe.cn/images/2024/03/20/12.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-03-08</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/general.html&quot;);" href="javascript:void(0);" alt="">SpringBoot总体概括</a><div class="blog-slider__text">🚆本文概括了Java SpringBoot学习的总体方向</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/general.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('gitZone');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 320px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('gitZone') && (location.pathname ==='/site/census/'|| '/site/census/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("/api?null",['#d9e0df', '#c6e0dc', '#a8dcd4', '#9adcd2', '#89ded1', '#77e0d0', '#5fdecb', '#47dcc6', '#39dcc3', '#1fdabe', '#00dab9'],'null')
+    }
+  </script><!-- hexo injector body_end end --></body></html>
