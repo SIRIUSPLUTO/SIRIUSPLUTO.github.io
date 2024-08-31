@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/posts/0.html"/>
+      <url>/posts/0.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot开发实用篇</title>
       <link href="/posts/%20develop.html"/>
       <url>/posts/%20develop.html</url>
@@ -66,7 +79,7 @@
       <link href="/posts/general.html"/>
       <url>/posts/general.html</url>
       
-        <content type="html"><![CDATA[<div class="note info flat"><p>参考：<a href="https://www.bilibili.com/video/BV15b4y1a7yG/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&amp;vd_source=beccc1aa43a80247195ca2b7ae6999b7">黑马程序员SpringBoot2全套视频教程，springboot零基础到项目实战（spring boot2完整版）_哔哩哔哩_bilibili</a></p></div><h1 id="1-基础篇"><a href="#1-基础篇" class="headerlink" title="1. 基础篇"></a>1. 基础篇</h1><ul><li>能够创建SpringBoot工程</li><li>基于SpringBoot实现SSM整合</li></ul><h1 id="2-开发实用篇"><a href="#2-开发实用篇" class="headerlink" title="2. 开发实用篇"></a>2. 开发实用篇</h1><ul><li>能够基于SpringBoot整合任意第三方技术</li></ul><h1 id="3-原理篇"><a href="#3-原理篇" class="headerlink" title="3. 原理篇"></a>3. 原理篇</h1><ul><li>掌握SpringBoot内部工作流程</li><li>理解SpringBoot整合第三方技术的原理</li><li>实现自定义开发整合第三方技术的组件</li></ul><h1 id="4-运维实用篇"><a href="#4-运维实用篇" class="headerlink" title="4. 运维实用篇"></a>4. 运维实用篇</h1><ul><li>能够掌握SpringBoot程序多环境开发</li><li>能够基于Linux系统发布SpringBoot工程</li><li>能够解决线上灵活配置SpringBoot工程的需求</li></ul>]]></content>
+        <content type="html"><![CDATA[<div class="note info flat"><p>参考：<a href="https://www.bilibili.com/video/BV15b4y1a7yG/?spm_id_from=333.1007.top_right_bar_window_default_collection.content.click&amp;vd_source=beccc1aa43a80247195ca2b7ae6999b7">黑马程序员SpringBoot2全套视频教程，springboot零基础到项目实战（spring boot2完整版）_哔哩哔哩_bilibili</a></p></div><h1>1. 基础篇</h1><ul><li>能够创建SpringBoot工程</li><li>基于SpringBoot实现SSM整合</li></ul><h1>2. 开发实用篇</h1><ul><li>能够基于SpringBoot整合任意第三方技术</li></ul><h1>3. 原理篇</h1><ul><li>掌握SpringBoot内部工作流程</li><li>理解SpringBoot整合第三方技术的原理</li><li>实现自定义开发整合第三方技术的组件</li></ul><h1>4. 运维实用篇</h1><ul><li>能够掌握SpringBoot程序多环境开发</li><li>能够基于Linux系统发布SpringBoot工程</li><li>能够解决线上灵活配置SpringBoot工程的需求</li></ul>]]></content>
       
       
       <categories>
