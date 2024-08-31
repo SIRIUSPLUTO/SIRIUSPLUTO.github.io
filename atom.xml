@@ -6,7 +6,7 @@
   <link href="https://siriuspluto.github.io/atom.xml" rel="self"/>
   
   <link href="https://siriuspluto.github.io/"/>
-  <updated>2024-08-31T08:51:33.962Z</updated>
+  <updated>2024-04-07T13:04:29.417Z</updated>
   <id>https://siriuspluto.github.io/</id>
   
   <author>
@@ -15,19 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://siriuspluto.github.io/posts/0.html"/>
-    <id>https://siriuspluto.github.io/posts/0.html</id>
-    <published>2024-08-31T08:51:23.778Z</published>
-    <updated>2024-08-31T08:51:33.962Z</updated>
-    
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>SpringBoot开发实用篇</title>
